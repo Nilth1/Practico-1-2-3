@@ -1,0 +1,171 @@
+body {
+    background-color: #fafafa;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.input-group-text {
+    border-radius: 20px 0 0 20px;
+}
+
+.form-control {
+    border-radius: 0 20px 20px 0;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #dee2e6;
+}
+
+.btn-catalogo {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    font-weight: 500;
+}
+
+.btn-catalogo:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-favoritos {
+    color: #fff;
+    background-color: #ffca28;
+    border-color: #ffca28;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+}
+
+.btn-favoritos:hover {
+    background-color: #ffb300;
+    border-color: #ffb300;
+    color: #fff;
+}
+
+.no-arrow::after {
+    display: none;
+}
+
+.dropdown-menu {
+    border-radius: 8px;
+    padding: 8px 0;
+}
+
+.dropdown-menu-item {
+    display: block;
+    width: 100%;
+    padding: 6px 16px;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-menu-item:hover {
+    background-color: #f8f9fa;
+    color: #1e2125;
+}
+
+
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('https://i.pinimg.com/1200x/36/19/5c/36195cfd3da8f4c120497f9dfc7f3638.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 95vh;
+}
+
+.hero-texto {
+    font-size: 22px;
+    color: #ffffff;
+    line-height: 32px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.henny-penny-regular {
+    font-family: "Henny Penny", system-ui;
+    font-style: normal;
+}
+
+.hero-enlace-catalogo {
+    font-size: 72px;
+    color: #28ffa5;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-enlace-catalogo:hover {
+    color: #4ffff0;
+    transform: scale(1.05);
+}
+
+
+.card {
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.libro-destacado {
+    transform: scale(1.08);
+    z-index: 2;
+    border-width: 2px;
+}
+
+.libro-destacado:hover {
+    transform: scale(1.10) translateY(-4px);
+}
+
+.badge {
+    padding: 6px 12px;
+    font-size: 11px;
+    border-radius: 50px;
+}
+
+
+#ofertas-mundial .card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#ofertas-mundial .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .08) !important;
+}
+
+.style-tracking {
+    letter-spacing: 0.5px;
+    font-size: 13px;
+}
+
+
+.footer-link {
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #0dcaf0 !important;
+}
+
+.footer-icon {
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+}
+
+.footer-icon:hover {
+    color: #0dcaf0 !important;
+    transform: translateY(-3px);
+}
