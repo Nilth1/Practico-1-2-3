@@ -1,0 +1,54 @@
+/* Dashboard de administración y página de usuario: claro, coherente con la landing */
+body.dash { background: #f4f7fb; min-height: 100vh; }
+
+.dash-sidebar {
+    width: 240px;
+    background: #fff;
+    border-right: 1px solid #e9ecef;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+}
+.dash-sidebar .marca { display: flex; align-items: center; gap: 10px; padding: 18px 20px; font-weight: 700; color: #212529; text-decoration: none; }
+.dash-sidebar .marca img { height: 30px; }
+.dash-nav .nav-link {
+    color: #495057;
+    border-radius: 10px;
+    margin: 2px 12px;
+    padding: 10px 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.dash-nav .nav-link:hover { background: #f1f5ff; color: #0d6efd; }
+.dash-nav .nav-link.active { background: #e7f1ff; color: #0d6efd; }
+
+.dash-topbar {
+    background: #fff;
+    border-bottom: 1px solid #e9ecef;
+    padding: 12px 24px;
+}
+.dash-contenido { padding: 24px; }
+
+.stat-card { border: 0; border-radius: 14px; box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+.stat-card .icono {
+    width: 46px; height: 46px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; font-size: 22px;
+}
+.stat-card .numero { font-size: 1.8rem; font-weight: 700; line-height: 1; }
+
+.panel-card { border: 0; border-radius: 14px; box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+.panel-card .card-header { background: #fff; border-bottom: 1px solid #f1f3f5; font-weight: 600; border-radius: 14px 14px 0 0; }
+.tabla-mini img { width: 38px; height: 50px; object-fit: contain; background: #f8f9fa; border-radius: 4px; }
+
+.dash .card:hover { transform: none; }   /* anula el "salto" de las cards de la landing */
+
+@media (max-width: 991.98px) {
+    .dash-sidebar { display: none; }
+    .dash-contenido { padding: 16px; }
+}
+
+/* Contenido centrado, no a todo el ancho */
+.dash-contenido { max-width: 1200px; margin-left: auto; margin-right: auto; width: 100%; }

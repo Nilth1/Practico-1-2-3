@@ -169,3 +169,9 @@ html {
     color: #0dcaf0 !important;
     transform: translateY(-3px);
 }
+
+/* ---- Menú de usuario del header (Práctico 2) ---- */
+button.dropdown-menu-item {
+    cursor: pointer;
+    text-align: left;
+}
