@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Biblionline — Prácticos 1, 2 y 3
 
 Proyecto incremental de la Biblioteca Virtual (HTML, CSS, Bootstrap, JavaScript, PHP y MySQL con Docker).
@@ -63,3 +64,7 @@ front/
 ## Seguridad básica
 
 Contraseñas con `password_hash` / `password_verify`, consultas preparadas (PDO), `session_regenerate_id` al loguear, cookie de sesión `HttpOnly` + `SameSite=Lax`, y el rol se valida siempre en el servidor.
+=======
+# Practico-1-2-3
+Practico que va del 1 al 3 incrementalmente.
+>>>>>>> Nilth1/main
