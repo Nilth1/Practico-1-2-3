@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Biblionline</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="dist/css/style.css?v=4" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="bg-white border-bottom py-2">
+        <div class="container-fluid px-3">
+            <div class="row align-items-center g-2">
+                <div class="col-2 col-sm-2 d-flex align-items-center">
+                    <a href="landing.html" class="d-inline-block">
+                        <img src="dist/img/logo.ico" alt="Logo" class="img-fluid" style="max-height: 35px;">
+                    </a>
+                </div>
+                <div class="col col-sm-6">
+                    <form class="d-flex w-100" onsubmit="return false;">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text bg-light border-end-0">
+                                <i class="bi bi-search text-muted"></i>
+                            </span>
+                            <input id="input-buscador" type="search" class="form-control bg-light border-start-0"
+                                placeholder="Buscar...">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-auto col-sm-4 d-flex align-items-center justify-content-end gap-1 gap-sm-2">
+                    <a href="#catalogo" class="btn btn-primary btn-sm rounded-pill btn-catalogo px-2 px-sm-3">
+                        <span class="d-none d-sm-inline">CATÁLOGO</span>
+                        <i class="bi bi-book d-inline d-sm-none"></i>
+                    </a>
+                    <button type="button"
+                        class="btn btn-light btn-sm rounded-circle border btn-favoritos d-flex align-items-center justify-content-center">
+                        <i class="bi bi-bookmark-fill"></i>
+                    </button>
+                    <div id="zona-usuario" class="d-flex align-items-center gap-1 gap-sm-2">
+                        <a href="dist/pages/login.html" class="btn btn-outline-primary btn-sm rounded-pill px-2 px-sm-3">
+                            <i class="bi bi-box-arrow-in-right d-sm-none"></i><span class="d-none d-sm-inline">Ingresar</span>
+                        </a>
+                        <a href="dist/pages/register.html" class="btn btn-primary btn-sm rounded-pill px-3 d-none d-sm-inline-block">Registrarse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="hero-section d-flex align-items-center justify-content-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-10 col-md-8 text-center px-4">
+                        <p class="hero-texto mb-2 fw-bold fs-5 fs-sm-4 fs-md-3">Bienvenido a Biblionline, tu biblioteca
+                            online donde tienes mucha variedad de libros para leer, mira nuestro</p>
+                        <a href="#catalogo"
+                            class="henny-penny-regular hero-enlace-catalogo d-block text-decoration-none fw-bold">CATÁLOGO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="catalogo" class="container py-5">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-12 col-md-8">
+                    <h2 class="fw-bold text-dark fs-2">Libros más populares</h2>
+                    <p class="text-muted fs-6">Estos son los 5 libros más vendidos de la historia, ¡y nosotros los
+                        tenemos todos!</p>
+                </div>
+            </div>
+            <div id="contenedor-libros" class="row g-4 align-items-center justify-content-center"></div>
+            <div class="text-center mt-5">
+                <button id="btn-catalogo-completo" type="button" class="btn btn-primary btn-lg rounded-pill px-5 fw-bold shadow-sm">
+                    CATÁLOGO COMPLETO <i class="bi bi-arrow-right ms-1"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <div id="ofertas-mundial" class="py-5" style="background-color: #fff5f0;">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-12 col-md-4">
+                        <h2 class="fw-bold text-dark fs-1 mb-3 text-uppercase">Ofertas</h2>
+                        <p class="text-muted fs-6">Estas ofertas estarán disponible hasta que termine el MUNDIAL,
+                            aprovechálas.</p>
+                        <div class="mt-4 p-3 bg-white border border-danger-subtle rounded-3 d-inline-block shadow-sm">
+                            <span class="text-danger fw-bold d-block mb-1 text-uppercase style-tracking"><i
+                                    class="bi bi-calendar-event-fill me-2"></i>Fecha Límite:</span>
+                            <span class="fw-bold text-dark fs-5">19 de Julio de 2026</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <div id="contenedor-ofertas" class="row g-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="bg-dark text-light border-top border-secondary border-opacity-25 py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-12 col-md-4">
+                        <h5 class="fw-bold text-uppercase text-white mb-3 fs-6 style-tracking">Biblionline</h5>
+                        <p class="text-secondary small mb-0" style="line-height: 24px;">
+                            Tu biblioteca online favorita con la mejor selección de historias, best sellers y ofertas
+                            exclusivas para lectores apasionados.
+                        </p>
+                    </div>
+                    <div class="col-6 col-md-4 text-md-center">
+                        <h5 class="fw-bold text-uppercase text-white mb-3 fs-6 style-tracking">Navegación</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#"
+                                    class="text-secondary text-decoration-none small footer-link">Inicio</a></li>
+                            <li class="mb-2"><a href="#catalogo"
+                                    class="text-secondary text-decoration-none small footer-link">Catálogo</a></li>
+                            <li class="mb-2"><a href="#ofertas-mundial"
+                                    class="text-secondary text-decoration-none small footer-link">Ofertas</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-4 text-end">
+                        <h5 class="fw-bold text-uppercase text-white mb-3 fs-6 style-tracking">Contacto</h5>
+                        <p class="text-secondary small mb-2"><i
+                                class="bi bi-envelope me-2 text-info"></i>soporte@biblionline.com</p>
+                        <div class="d-flex justify-content-end gap-3 mt-3">
+                            <a href="#" class="text-secondary fs-5 footer-icon"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-secondary fs-5 footer-icon"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="text-secondary fs-5 footer-icon"><i class="bi bi-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4 text-secondary opacity-25">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="text-secondary small mb-0" style="font-size: 13px;">&copy; 2026 Biblionline. Todos los
+                            derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="dist/js/api.js?v=4"></script>
+    <script src="dist/js/script.js?v=4"></script>
+    <script>
+        // Botón CATÁLOGO COMPLETO: sin sesión -> alert; con sesión -> catalogo.php
+        document.getElementById("btn-catalogo-completo").addEventListener("click", async function () {
+            let logueado = false;
+            try {
+                const r = await fetch("/php/auth.php?accion=sesion", { credentials: "same-origin" });
+                const d = await r.json();
+                logueado = !!d.logueado;
+            } catch (e) {
+                alert("No se pudo verificar la sesión. Abrí el sitio desde http://localhost:8080/landing.html");
+                return;
+            }
+            if (logueado) {
+                window.location.href = "catalogo.php";
+            } else {
+                alert("Tenés que iniciar sesión primero para ver el catálogo completo.");
+            }
+        });
+    </script>
+</body>
+
+</html>

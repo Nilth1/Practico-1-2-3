@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ingresar - Biblionline</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="../css/auth.css" rel="stylesheet">
+</head>
+
+<body class="pagina-auth">
+    <a href="../../landing.html" class="auth-volver"><i class="bi bi-arrow-left"></i> Volver</a>
+
+    <div class="auth-card">
+        <div class="text-center mb-4">
+            <img src="../img/logo.png" onerror="this.onerror=null;this.src='../img/logo.ico'" alt="Biblionline" class="auth-logo mb-2">
+            <h1 class="auth-titulo mb-0">Ingresar a Biblionline</h1>
+        </div>
+
+        <div id="alerta" class="alert d-none py-2 small" role="alert"></div>
+
+        <form id="form-login" novalidate>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" type="email" class="form-control" placeholder="usuario@biblionline.com" required
+                    autocomplete="email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input id="password" type="password" class="form-control" placeholder="••••••••" required
+                    autocomplete="current-password">
+            </div>
+
+            <label class="form-label">Ingresar como</label>
+            <div class="rol-opciones mb-4">
+                <button type="button" class="rol-opcion elegida" data-rol="Usuario">
+                    <i class="bi bi-person"></i>Usuario
+                </button>
+                <button type="button" class="rol-opcion" data-rol="Administrador">
+                    <i class="bi bi-shield-lock"></i>Administrador
+                </button>
+            </div>
+
+            <button type="submit" id="btn-enviar" class="btn btn-primary btn-auth w-100">Ingresar</button>
+        </form>
+
+        <p class="auth-pie text-center mt-4 mb-0">¿No tenés cuenta? <a href="register.html">Registrate</a></p>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script>
+        const alerta = document.getElementById('alerta');
+        function mostrarAlerta(msg, tipo = 'danger') {
+            alerta.className = 'alert alert-' + tipo + ' py-2 small';
+            alerta.textContent = msg;
+        }
+
+        // Aviso si lo mandaron acá por intentar entrar a una zona protegida
+        if (new URLSearchParams(location.search).get('aviso') === 'sesion') {
+            mostrarAlerta('Tenés que iniciar sesión para acceder a esa sección.', 'warning');
+        }
+
+        // Si ya hay sesión iniciada, redirige directo según el rol
+        API.sesion().then(r => { if (r.logueado) location.href = r.destino; });
+
+        // Selector de rol
+        const opciones = document.querySelectorAll('.rol-opcion');
+        opciones.forEach(op => op.addEventListener('click', () => {
+            opciones.forEach(o => o.classList.remove('elegida'));
+            op.classList.add('elegida');
+        }));
+
+        document.getElementById('form-login').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const rol = document.querySelector('.rol-opcion.elegida').dataset.rol;
+            const btn = document.getElementById('btn-enviar');
+
+            if (!email || !password) return mostrarAlerta('Completá todos los campos.');
+
+            btn.disabled = true;
+            const r = await API.login(email, password, rol);
+            if (r.status === 'success') {
+                location.href = r.data.redirect;   // /admin.php o /usuario.php según el rol real
+            } else {
+                mostrarAlerta(r.message || 'No se pudo iniciar sesión.');
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+
+</html>
