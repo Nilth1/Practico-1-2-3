@@ -168,7 +168,6 @@ html {
 .footer-icon:hover {
     color: #0dcaf0 !important;
     transform: translateY(-3px);
-<<<<<<< HEAD
 }
 
 /* ---- Menú de usuario del header (Práctico 2) ---- */
@@ -176,6 +175,3 @@ button.dropdown-menu-item {
     cursor: pointer;
     text-align: left;
 }
-=======
-}
->>>>>>> Nilth1/main
